@@ -42,22 +42,22 @@ flutter:
 
 flutter_native_splash:
   color: "#ffffff" # The background color of the splash screen.  It can be any valid color.
-  image: assets/splash.png
+  image: assets/images/logo_black.png
   android: true
   ios: true
   web: true
   color_web: "#ffffff" # The background color of the splash screen for web.  It can be any valid color.
-  image_web: assets/splash-web.gif
+  image_web: assets/images/icon_black.png
   # dart run flutter_native_splash:create
 
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/icon.png"
+  image_path: "assets/images/icon_black.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
   web:
     generate: true
-    image_path: "assets/images/icon.png"
+    image_path: "assets/images/icon_black.png"
     background_color: "#ffffff" # The background color of the web app icon. It can be any valid color.
   
   # dart run flutter_launcher_icons

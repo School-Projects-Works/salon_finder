@@ -3,7 +3,7 @@
     "short_name": "salon_finder",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
+    "background_color": "#ffffff",
     "theme_color": "#0175C2",
     "description": "A saloon finding application for aamusted students",
     "orientation": "portrait-primary",

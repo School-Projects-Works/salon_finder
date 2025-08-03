@@ -4,73 +4,93 @@ import 'package:google_fonts/google_fonts.dart';
 import 'colors.dart';
 
 class AppTextStyles {
-  // Headings
-  static TextStyle headline1 = GoogleFonts.montserrat(
-    fontSize: 96,
-    fontWeight: FontWeight.bold,
-    color: AppColors.textPrimary,
-  );
-  static TextStyle headline2 = GoogleFonts.montserrat(
-    fontSize: 60,
-    fontWeight: FontWeight.bold,
-    color: AppColors.textPrimary,
-  );
-  static TextStyle headline3 = GoogleFonts.montserrat(
-    fontSize: 48,
-    fontWeight: FontWeight.w600,
-    color: AppColors.textPrimary,
-  );
-  static TextStyle headline4 = GoogleFonts.montserrat(
-    fontSize: 34,
-    fontWeight: FontWeight.w500,
-    color: AppColors.textPrimary,
-  );
-  static TextStyle headline5 = GoogleFonts.montserrat(
-    fontSize: 24,
-    fontWeight: FontWeight.w400,
-    color: AppColors.textPrimary,
-  );
-  static TextStyle headline6 = GoogleFonts.montserrat(
-    fontSize: 20,
-    fontWeight: FontWeight.w400,
-    color: AppColors.textPrimary,
-  );
+ static TextStyle title({
+    double? fontSize = 20,
+    Color? color = AppColors.textPrimary,
+    FontWeight? fontWeight = FontWeight.bold,
+    TextDecoration? decoration = TextDecoration.none,
+    double? letterSpacing = 0.5,
+    double? wordSpacing = 0.5,
+  }) {
+    return GoogleFonts.montserrat(
+      fontSize: fontSize,
+      fontWeight: fontWeight,
+      color: color,
+      decoration: decoration,
+      letterSpacing: letterSpacing,
+      wordSpacing: wordSpacing,
+    );
+ }
+  static TextStyle subtitle1({
+      double? fontSize = 16,
+      Color? color = AppColors.textSecondary,
+      FontWeight? fontWeight = FontWeight.w500,
+      TextDecoration? decoration = TextDecoration.none,
+      double? letterSpacing = 0.5,
+      double? wordSpacing = 0.5,
+    }) {
+      return GoogleFonts.montserrat(
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        color: color,
+        decoration: decoration,
+        letterSpacing: letterSpacing,
+        wordSpacing: wordSpacing,
+      );
+    }
 
-  // Body Text
-  static TextStyle bodyText1 = GoogleFonts.openSans(
-    fontSize: 16,
-    fontWeight: FontWeight.normal,
-    color: AppColors.textPrimary,
-  );
-  static TextStyle bodyText2 = GoogleFonts.openSans(
-    fontSize: 14,
-    fontWeight: FontWeight.normal,
-    color: AppColors.textPrimary,
-  );
+  static TextStyle body({
+      double? fontSize = 14,
+      Color? color = AppColors.textPrimary,
+      FontWeight? fontWeight = FontWeight.normal,
+      TextDecoration? decoration = TextDecoration.none,
+      double? letterSpacing = 0.5,
+      double? wordSpacing = 0.5,
+    }) {
+      return GoogleFonts.montserrat(
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        color: color,
+        decoration: decoration,
+        letterSpacing: letterSpacing,
+        wordSpacing: wordSpacing,
+      );
+    }
+  static TextStyle button({
+      double? fontSize = 16,
+      Color? color = Colors.white,
+      FontWeight? fontWeight = FontWeight.bold,
+      TextDecoration? decoration = TextDecoration.none,
+      double? letterSpacing = 1.0,
+      double? wordSpacing = 0.5,
+    }) {
+      return GoogleFonts.montserrat(
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        color: color,
+        decoration: decoration,
+        letterSpacing: letterSpacing,
+        wordSpacing: wordSpacing,
+      );
+    }
+  static TextStyle caption({
+      double? fontSize = 12,
+      Color? color = AppColors.textSecondary,
+      FontWeight? fontWeight = FontWeight.w400,
+      TextDecoration? decoration = TextDecoration.none,
+      double? letterSpacing = 0.5,
+      double? wordSpacing = 0.5,
+    }) {
+      return GoogleFonts.montserrat(
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        color: color,
+        decoration: decoration,
+        letterSpacing: letterSpacing,
+        wordSpacing: wordSpacing,
+      );
+    }
 
-  // Button Text
-  static TextStyle button = GoogleFonts.poppins(
-    fontSize: 16,
-    fontWeight: FontWeight.w600,
-    color: AppColors.textSecondary,
-  );
 
-  // Caption (for small secondary info)
-  static TextStyle caption = GoogleFonts.openSans(
-    fontSize: 12,
-    fontWeight: FontWeight.normal,
-    color: AppColors.textMuted,
-  );
 
-  // Subtitle Text
-  static TextStyle subtitle1 = GoogleFonts.poppins(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-    color: AppColors.textPrimary,
-  );
-  static TextStyle subtitle2 = GoogleFonts.poppins(
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
-    color: AppColors.textPrimary,
-  );
 }

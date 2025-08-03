@@ -2,9 +2,35 @@
 class Assets {
   Assets._();
 
+  static const String images10859 = 'assets/images/10859.jpg';
+  static const String imagesBarber = 'assets/images/barber.png';
+  static const String imagesBarberColor = 'assets/images/barber_color.png';
+  static const String imagesHead1 = 'assets/images/head_1.jpg';
+  static const String imagesHead2 = 'assets/images/head_2.jpg';
+  static const String imagesHead3 = 'assets/images/head_3.jpg';
+  static const String imagesHead4 = 'assets/images/head_4.jpg';
   static const String imagesIconBlack = 'assets/images/icon_black.png';
   static const String imagesIconWhite = 'assets/images/icon_white.png';
+  static const String imagesImage1 = 'assets/images/image_1.webp';
+  static const String imagesImage2 = 'assets/images/image_2.png';
+  static const String imagesImage3 = 'assets/images/image_3.png';
+  static const String imagesImage4 = 'assets/images/image_4.png';
   static const String imagesLogoBlack = 'assets/images/logo_black.png';
   static const String imagesLogoWhite = 'assets/images/logo_white.png';
+  static const String imagesMakeup = 'assets/images/makeup.png';
+  static const String imagesMakeupColor = 'assets/images/makeup_color.png';
+  static const String imagesNailArt = 'assets/images/nail_art.png';
+  static const String imagesNailArtColor = 'assets/images/nail_art_color.png';
+  static const String imagesSalon4 = 'assets/images/salon_4.jpg';
+  static const String imagesSaloon1 = 'assets/images/saloon_1.jpg';
+  static const String imagesSaloon2 = 'assets/images/saloon_2.jpg';
+  static const String imagesSaloon3 = 'assets/images/saloon_3.jpg';
+  static const String imagesWaxing = 'assets/images/waxing.png';
+  static const String imagesWaxingColor = 'assets/images/waxing_color.png';
+  static const String imagesWelcome = 'assets/images/welcome.png';
+  static const String imageUser = 'assets/images/user.png';
+  static const String imagesNailSalon = 'assets/images/nails.png';
+  static const String imageFacials = 'assets/images/facials.png';
+  static const String imagesMassage = 'assets/images/massage.png';
 
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "784933587810",
+    "project_id": "salon-finder-p",
+    "storage_bucket": "salon-finder-p.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784933587810:android:541c126b04c926a6597a3b",
+        "android_client_info": {
+          "package_name": "com.fihankra.salon_finder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiPk6EXbcA81cWpiChrk3M2psTo0Jp8CI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

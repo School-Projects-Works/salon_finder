@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:salon_finder/app/data/rating_model.dart';
-import 'package:salon_finder/app/provider/rating_provider.dart';
 import 'package:salon_finder/app/provider/salon_provider.dart';
 import 'package:salon_finder/app/ui/global_widgets/salon_item.dart';
 import 'package:salon_finder/app/ui/theme/colors.dart';
@@ -34,7 +32,6 @@ class _HomeContentPageState extends ConsumerState<HomeContentPage> {
   @override
   Widget build(BuildContext context) {
     var user = ref.watch(currentUserProvider).user;
-    var width = MediaQuery.of(context).size.width;
     return Container(
       color: Colors.deepPurpleAccent.shade100.withValues(alpha: 0.5),
       child: Column(

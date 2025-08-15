@@ -32,7 +32,6 @@ class _NewSalonGeneralState extends ConsumerState<NewSalonGeneral> {
   Widget build(BuildContext context) {
     final state = ref.watch(newSalonProvider);
     final notifier = ref.read(newSalonProvider.notifier);
-    final step = state.step;
     return Form(
       key: widget.formKey,
       child: Column(

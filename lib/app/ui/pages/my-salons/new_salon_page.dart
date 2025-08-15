@@ -1,15 +1,9 @@
-// ---------- UI: Stepper Wizard ----------
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:salon_finder/app/data/address_model.dart';
-import 'package:salon_finder/app/data/contact_model.dart';
-import 'package:salon_finder/app/data/salon_open_close_model.dart';
-import 'package:salon_finder/app/data/services_model.dart';
 import 'package:salon_finder/app/provider/new_salon_provider.dart';
 import 'package:salon_finder/app/ui/global_widgets/custom_button.dart';
 
-import '../../../data/category_data.dart';
 import 'my_salon_review.dart';
 import 'new_salon_address_contact.dart';
 import 'new_salon_general.dart';

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:salon_finder/app/ui/global_widgets/custom_button.dart';
 import 'package:salon_finder/app/ui/global_widgets/salon_item.dart';
 
 import '../../../provider/current_user_provider.dart';
@@ -18,7 +17,6 @@ class MySalonsPage extends ConsumerStatefulWidget {
 class _MySalonsPageState extends ConsumerState<MySalonsPage> {
   @override
   Widget build(BuildContext context) {
-    var user = ref.watch(currentUserProvider).user;
     var salons = ref.watch(currentUserProvider).salons;
     return Column(
       children: [

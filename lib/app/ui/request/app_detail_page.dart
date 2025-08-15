@@ -88,7 +88,6 @@ class _AppointmentDetailsPageState
     );
   }
 
-  void _handleStatusChange(String newStatus) {}
   Future<TransactionsModel?> _getAppTransaction(String appId) async {
     try {
       final data = await AppointmentServices.getTransactionByAppointmentId(

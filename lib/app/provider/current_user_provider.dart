@@ -149,7 +149,6 @@ final checkUserExistsProvider = FutureProvider<UserModel?>((ref) async {
   //   // salon.salonOwnerId = user.id;
   //   await SalonServices.createSalon(salon);
   // }
-  print("User exists: ${user}");
   ref.read(currentUserProvider.notifier).setCurrentUser(user);
   return user;
 });

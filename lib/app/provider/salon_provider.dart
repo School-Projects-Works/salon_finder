@@ -6,14 +6,15 @@ import 'package:salon_finder/app/provider/current_user_provider.dart';
 import 'package:salon_finder/app/services/rating_services.dart';
 import 'package:salon_finder/app/services/salon_services.dart';
 
-import '../data/user_model.dart';
 
 final salonStreamProvider = StreamProvider<List<SalonModel>>((ref) async* {
   final data = SalonServices.getAllSalons();
   // Listen to the stream of salons and yield the data
   await for (var salon in data) {
-    ref.read(salonProvider.notifier).setSalons(salon);
-    yield salon;
+    //get only active salons
+    List<SalonModel> activeSalons = salon.where((s) => s.status.toLowerCase() == 'active').toList();
+    ref.read(salonProvider.notifier).setSalons(activeSalons);
+    yield activeSalons;
   }
 });
 

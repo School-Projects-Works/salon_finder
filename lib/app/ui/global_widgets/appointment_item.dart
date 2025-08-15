@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_network/image_network.dart';
 import 'package:intl/intl.dart';
 import 'package:salon_finder/app/data/appointment_model.dart';
 import 'package:salon_finder/app/ui/theme/text_styles.dart';
@@ -42,11 +43,11 @@ class AppointmentItem extends ConsumerWidget {
                   fit: BoxFit.cover,
                 )
               else
-                Image.network(
-                  appointment.saloon.imageUrl,
+                ImageNetwork(
+                  image: appointment.saloon.imageUrl,
                   width: double.infinity,
                   height: 80,
-                  fit: BoxFit.cover,
+                  
                 ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),

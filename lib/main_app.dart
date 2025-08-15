@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:salon_finder/app/ui/global_widgets/custom_dialog.dart';
 import 'package:salon_finder/app/ui/pages/home_page/home_page.dart';
+import 'app/admin/main/views/admin_main.dart';
 import 'app/provider/current_user_provider.dart';
 import 'app/ui/pages/auth_page/welcome_page.dart';
 import 'app/ui/theme/theme.dart';
@@ -11,6 +13,9 @@ class MainApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+     if (kIsWeb) {
+      return const AdminMain();
+    }
     return MaterialApp(
       title: 'Salon Finder',
       navigatorKey: navigatorKey,

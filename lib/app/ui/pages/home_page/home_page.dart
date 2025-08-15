@@ -50,6 +50,7 @@ class _HomePageState extends ConsumerState<HomePage> {
           .watch(salonStreamProvider)
           .when(
             error: (error, stack) {
+              print('Error fetching salons=================: $error');
               return Center(child: Text('Error: $error'));
             },
             loading: () {

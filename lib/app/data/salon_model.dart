@@ -19,6 +19,7 @@ class SalonModel {
   List<SalonOpenCloseModel> openCloseHours;
   ContactModel contact;
   int createdAt;
+  String status;
   SalonModel({
     required this.id,
     required this.name,
@@ -30,6 +31,7 @@ class SalonModel {
     required this.openCloseHours,
     required this.contact,
     required this.createdAt,
+     this.status= 'Inactive',
   });
 
   SalonModel copyWith({
@@ -42,6 +44,7 @@ class SalonModel {
     List<ServicesModel>? services,
     List<SalonOpenCloseModel>? openCloseHours,
     ContactModel? contact,
+    String? status,
     int? createdAt,
   }) {
     return SalonModel(
@@ -54,6 +57,7 @@ class SalonModel {
       services: services ?? this.services,
       openCloseHours: openCloseHours ?? this.openCloseHours,
       contact: contact ?? this.contact,
+      status: status ?? this.status,
       createdAt: createdAt ?? this.createdAt,
     );
   }
@@ -69,6 +73,7 @@ class SalonModel {
       'services': services.map((x) => x.toMap()).toList(),
       'openCloseHours': openCloseHours.map((x) => x.toMap()).toList(),
       'contact': contact.toMap(),
+      'status': status,
       'createdAt': createdAt,
     };
   }
@@ -92,6 +97,7 @@ class SalonModel {
         ),
       ),
       contact: ContactModel.fromMap(map['contact'] as Map<String, dynamic>),
+      status: map['status'] ?? 'Inactive',
       createdAt: map['createdAt'] as int,
     );
   }
@@ -146,6 +152,7 @@ class SalonModel {
       salonOwnerId: '',
       services: [],
       openCloseHours: [],
+      status: 'Inactive',
       contact: ContactModel.initial(),
       createdAt: 0,
     );

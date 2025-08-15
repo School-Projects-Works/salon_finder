@@ -37,7 +37,7 @@ class ServicesModel {
     return ServicesModel(
       category: CategoryData.fromMap(map['category'] as Map<String,dynamic>),
       name: map['name'] as String,
-      price: map['price'] as double,
+      price:   double.parse(map['price'].toString()),
     );
   }
 

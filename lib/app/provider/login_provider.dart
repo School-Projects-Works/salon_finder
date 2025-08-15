@@ -31,6 +31,13 @@ class LoginNotifier extends StateNotifier<LoginModel> {
     CustomDialog.loading();
     var loginData = await AuthServices.login(login: state);
     if (loginData.user != null) {
+      if(loginData.user!.status.toLowerCase()!='active'){
+        CustomDialog.closeDialog();
+        CustomDialog.showErrorDialog(
+          message: 'Your account is not active. Please contact support.',
+        );
+        return;
+      }
       // Login successful
       ref.read(currentUserProvider.notifier).setCurrentUser(loginData.user!);
       CustomDialog.closeDialog();

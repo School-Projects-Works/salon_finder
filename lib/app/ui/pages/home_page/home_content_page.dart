@@ -333,6 +333,7 @@ class _HomeContentPageState extends ConsumerState<HomeContentPage> {
                                     );
                                   },
                                   error: (error, stack) {
+                                    print('Error fetching top rated salons=================: $error');
                                     return Center(
                                       child: Text(
                                         'Error: $error',

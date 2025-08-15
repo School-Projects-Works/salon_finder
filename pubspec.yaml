@@ -27,6 +27,14 @@ dependencies:
   cloud_firestore: ^6.0.0
   firebase_storage: ^13.0.0
   shared_preferences: ^2.5.3
+  intl: ^0.20.2
+  http: ^1.5.0
+  pay_with_paystack:
+    git:
+      url: 'https://github.com/Emmanuelfrimpong/pay_with_paystack.git'
+  url_launcher: ^6.3.2
+  image_picker: ^1.1.2
+
 
 dev_dependencies:
   flutter_test:

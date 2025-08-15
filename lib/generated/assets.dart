@@ -5,6 +5,7 @@ class Assets {
   static const String images10859 = 'assets/images/10859.jpg';
   static const String imagesBarber = 'assets/images/barber.png';
   static const String imagesBarberColor = 'assets/images/barber_color.png';
+  static const String imagesFacials = 'assets/images/facials.png';
   static const String imagesHead1 = 'assets/images/head_1.jpg';
   static const String imagesHead2 = 'assets/images/head_2.jpg';
   static const String imagesHead3 = 'assets/images/head_3.jpg';
@@ -19,18 +20,22 @@ class Assets {
   static const String imagesLogoWhite = 'assets/images/logo_white.png';
   static const String imagesMakeup = 'assets/images/makeup.png';
   static const String imagesMakeupColor = 'assets/images/makeup_color.png';
+  static const String imagesMassage = 'assets/images/massage.png';
   static const String imagesNailArt = 'assets/images/nail_art.png';
   static const String imagesNailArtColor = 'assets/images/nail_art_color.png';
+  static const String imagesNails = 'assets/images/nails.png';
   static const String imagesSalon4 = 'assets/images/salon_4.jpg';
+  static const String imagesSalon5 = 'assets/images/salon_5.jpg';
+  static const String imagesSalon6 = 'assets/images/salon_6.jpg';
+  static const String imagesSalon7 = 'assets/images/salon_7.jpg';
+  static const String imagesSalon8 = 'assets/images/salon_8.jpg';
+  static const String imagesSalon9 = 'assets/images/salon_9.jpg';
   static const String imagesSaloon1 = 'assets/images/saloon_1.jpg';
   static const String imagesSaloon2 = 'assets/images/saloon_2.jpg';
   static const String imagesSaloon3 = 'assets/images/saloon_3.jpg';
+  static const String imagesUser = 'assets/images/user.png';
   static const String imagesWaxing = 'assets/images/waxing.png';
   static const String imagesWaxingColor = 'assets/images/waxing_color.png';
   static const String imagesWelcome = 'assets/images/welcome.png';
-  static const String imageUser = 'assets/images/user.png';
-  static const String imagesNailSalon = 'assets/images/nails.png';
-  static const String imageFacials = 'assets/images/facials.png';
-  static const String imagesMassage = 'assets/images/massage.png';
 
 }

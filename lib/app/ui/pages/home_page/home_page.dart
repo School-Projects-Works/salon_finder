@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:salon_finder/app/ui/request/appointments_page.dart';
+import '../../../provider/salon_provider.dart';
 import '../../profile/profile_page.dart';
+import '../my-salons/my_salons_page.dart';
 import 'home_content_page.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -43,7 +45,25 @@ class _HomePageState extends ConsumerState<HomePage> {
   }
 
   List<Widget> _buildScreens() {
-    return [HomeContentPage(), const AppointmentsPage(), const ProfilePage()];
+    return [
+      ref
+          .watch(salonStreamProvider)
+          .when(
+            error: (error, stack) {
+              return Center(child: Text('Error: $error'));
+            },
+            loading: () {
+              return const Center(child: CircularProgressIndicator());
+            },
+            data: (data) {
+              return HomeContentPage();
+            },
+          ),
+
+      const AppointmentsPage(),
+      const MySalonsPage(),
+      const UserProfilePage(),
+    ];
   }
 
   List<PersistentBottomNavBarItem> _navBarsItems() {
@@ -57,6 +77,13 @@ class _HomePageState extends ConsumerState<HomePage> {
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.calendar_today),
         title: "My App",
+        activeColorPrimary: Colors.white,
+        inactiveColorPrimary: Colors.grey,
+      ),
+      // my salons
+      PersistentBottomNavBarItem(
+        icon: const Icon(Icons.business),
+        title: "My Salons",
         activeColorPrimary: Colors.white,
         inactiveColorPrimary: Colors.grey,
       ),

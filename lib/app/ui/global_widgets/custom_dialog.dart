@@ -188,12 +188,14 @@ class CustomDialog {
                 children: [
                   const Icon(Icons.info_rounded, color: Colors.blue, size: 30),
                   const SizedBox(width: 8),
-                  Text(
-                    title,
-                    style: AppTextStyles.title(
-                      fontSize: 18,
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: Text(
+                      title,
+                      style: AppTextStyles.title(
+                        fontSize: 18,
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],

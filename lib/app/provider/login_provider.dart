@@ -5,6 +5,7 @@ import 'package:salon_finder/app/data/login_model.dart';
 import '../services/auth_services.dart';
 import '../ui/global_widgets/custom_dialog.dart';
 import '../ui/pages/home_page/home_page.dart';
+import 'current_user_provider.dart';
 
 final loginProvider = StateNotifierProvider<LoginNotifier, LoginModel>(
   (ref) => LoginNotifier(ref),
@@ -31,12 +32,13 @@ class LoginNotifier extends StateNotifier<LoginModel> {
     var loginData = await AuthServices.login(login: state);
     if (loginData.user != null) {
       // Login successful
+      ref.read(currentUserProvider.notifier).setCurrentUser(loginData.user!);
       CustomDialog.closeDialog();
       CustomDialog.showSnackBar(message: loginData.message);
       // Navigate to the home page or any other page
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+       Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => const HomePage()),
+        (route) => false,
       );
     } else {
       // Login failed

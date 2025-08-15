@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:salon_finder/app/data/user_model.dart';
 import 'package:salon_finder/app/ui/global_widgets/custom_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -7,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../data/login_model.dart';
 
 class AuthServices {
-  static Future<({User? user,String message})> register({
+  static Future<({User? user, String message})> register({
     required UserModel user,
   }) async {
     try {
@@ -38,7 +41,10 @@ class AuthServices {
       } else if (e.code == 'invalid-email') {
         return (user: null, message: 'The email address is not valid.');
       } else if (e.code == 'email-already-in-use') {
-        return (user: null, message: 'The account already exists for that email.');
+        return (
+          user: null,
+          message: 'The account already exists for that email.',
+        );
       }
     } catch (e) {
       return (user: null, message: e.toString());
@@ -46,7 +52,7 @@ class AuthServices {
     return (user: null, message: 'An unknown error occurred.');
   }
 
-  static Future<({UserModel? user,String message})> login({
+  static Future<({UserModel? user, String message})> login({
     required LoginModel login,
   }) async {
     try {
@@ -59,8 +65,11 @@ class AuthServices {
         return (user: null, message: 'Login failed');
       } else if (!firebaseUser.emailVerified) {
         //send email verification
-       // await firebaseUser.sendEmailVerification();
-        return (user: null, message: 'Please verify your email before logging in.');
+        // await firebaseUser.sendEmailVerification();
+        return (
+          user: null,
+          message: 'Please verify your email before logging in.',
+        );
       }
       // Fetch user data from Firestore
       final userDoc = await FirebaseFirestore.instance
@@ -117,6 +126,44 @@ class AuthServices {
       CustomDialog.showErrorDialog(
         message: 'Failed to send verification email: ${e.toString()}',
       );
+    }
+  }
+
+  static Future<({String message, bool status,UserModel? user})> updateUser({
+    UserModel? user,
+    File? image,
+  }) async {
+    try {
+      // Upload image to Firebase Storage
+      String profileImage = "";
+      if (image != null) {
+        profileImage = await uploadImageToStorage(image);
+      }
+      // Update user information in Firestore
+      if (user != null) {
+        user.profilePictureUrl = profileImage;
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.id)
+            .update(user.toMap());
+             SharedPreferences prefs = await SharedPreferences.getInstance();
+        await prefs.setString('user', user.toJson());
+      }
+      return (message: 'User updated successfully', status: true, user: user);
+    } catch (e) {
+      return (message: 'Failed to update user: ${e.toString()}', status: false, user: null);
+    }
+  }
+
+  static Future<String> uploadImageToStorage(File image) async {
+    try {
+      // Upload image to Firebase Storage
+      String filePath = 'users/${FirebaseAuth.instance.currentUser?.uid}/profile.jpg';
+      TaskSnapshot snapshot = await FirebaseStorage.instance.ref(filePath).putFile(image);
+      String downloadUrl = await snapshot.ref.getDownloadURL();
+      return downloadUrl;
+    } catch (e) {
+      return '';
     }
   }
 }

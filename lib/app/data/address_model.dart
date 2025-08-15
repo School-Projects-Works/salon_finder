@@ -88,4 +88,14 @@ class AddressModel {
       latitude.hashCode ^
       longitude.hashCode;
   }
+  static AddressModel initial() {
+    return AddressModel(
+      street: '',
+      city: '',
+      region: '',
+      country: '',
+      latitude: '',
+      longitude: '',
+    );
+  }
 }

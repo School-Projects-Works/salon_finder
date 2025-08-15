@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+
 import 'address_model.dart';
 
 class UserModel {
@@ -11,6 +12,7 @@ class UserModel {
   String? password;
   AddressModel? address;
   String status; // e.g., "active", "inactive", "banned"
+  String whatsapp;
   DateTime createdAt;
   UserModel({
     required this.id,
@@ -21,6 +23,7 @@ class UserModel {
     this.password,
     this.address,
     required this.status,
+    required this.whatsapp,
     required this.createdAt,
   });
 
@@ -33,6 +36,7 @@ class UserModel {
     String? password,
     AddressModel? address,
     String? status,
+    String? whatsapp,
     DateTime? createdAt,
   }) {
     return UserModel(
@@ -44,6 +48,7 @@ class UserModel {
       password: password ?? this.password,
       address: address ?? this.address,
       status: status ?? this.status,
+      whatsapp: whatsapp ?? this.whatsapp,
       createdAt: createdAt ?? this.createdAt,
     );
   }
@@ -58,6 +63,7 @@ class UserModel {
       'password': password,
       'address': address?.toMap(),
       'status': status,
+      'whatsapp': whatsapp,
       'createdAt': createdAt.millisecondsSinceEpoch,
     };
   }
@@ -72,6 +78,7 @@ class UserModel {
       password: map['password'] != null ? map['password'] as String : null,
       address: map['address'] != null ? AddressModel.fromMap(map['address'] as Map<String,dynamic>) : null,
       status: map['status'] as String,
+      whatsapp: map['whatsapp'] as String,
       createdAt: DateTime.fromMillisecondsSinceEpoch(map['createdAt'] as int),
     );
   }
@@ -82,7 +89,7 @@ class UserModel {
 
   @override
   String toString() {
-    return 'UserModel(id: $id, name: $name, email: $email, phoneNumber: $phoneNumber, profilePictureUrl: $profilePictureUrl, password: $password, address: $address, status: $status, createdAt: $createdAt)';
+    return 'UserModel(id: $id, name: $name, email: $email, phoneNumber: $phoneNumber, profilePictureUrl: $profilePictureUrl, password: $password, address: $address, status: $status, whatsapp: $whatsapp, createdAt: $createdAt)';
   }
 
   @override
@@ -98,6 +105,7 @@ class UserModel {
       other.password == password &&
       other.address == address &&
       other.status == status &&
+      other.whatsapp == whatsapp &&
       other.createdAt == createdAt;
   }
 
@@ -111,6 +119,7 @@ class UserModel {
       password.hashCode ^
       address.hashCode ^
       status.hashCode ^
+      whatsapp.hashCode ^
       createdAt.hashCode;
   }
 
@@ -124,6 +133,7 @@ class UserModel {
       password: null,
       address: null,
       status: 'active',
+      whatsapp: '',
       createdAt: DateTime.now(),
     );
   }
